@@ -17,14 +17,26 @@ public class Snancke {
 		 System.out.println("welcome to Snack&adder");
 		 
 		 int position=0;
+		 
+		 
 		 System.out.println("Start From -" +position);
 		 
-		int die=(int)Math.floor(Math.random() *10) %6+1;
-		System.out.println("die is -" +die);
+		int die;
+		
 		 
-		int option=(int)Math.floor(Math.random() *10) %3;
+		int option;
 		
-		
+			while(position<=100) {
+				
+			
+			die=(int)Math.floor(Math.random() *10) %6+1;
+			System.out.println("die is -" +die);
+			
+			if (position>=100) {
+				System.out.println("winning position = "+ position);
+			}
+			
+			option=(int)Math.floor(Math.random() *10) %3;
 		  
 		switch(option) {
 		case noPlay:
@@ -37,11 +49,19 @@ public class Snancke {
 			break;
 		case snake:
 			position =position-die;
+			if(position<0) {
+				position=0;
+				
+			}
 			System.out.println("player moves behind = " +position+" die = "+die);
 			break;
 			default:
 				break;
-	}
+		}
+		
+		
+	
+			}
 		}
 }
 			
