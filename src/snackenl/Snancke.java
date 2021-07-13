@@ -12,7 +12,8 @@ public class Snancke {
 	
 	public static void main (String[] args) {
 		
-		
+		int count=0;
+		int i=0;
 		
 		 System.out.println("welcome to Snack&adder");
 		 
@@ -26,27 +27,14 @@ public class Snancke {
 		 
 		int option;
 		
-			while(position<=100) {
+			while(position<=100 && i==0) {
 				
 			
 			die=(int)Math.floor(Math.random() *10) %6+1;
 			System.out.println("die is -" +die);
 			
-			if (position>=100) {
-				
-				System.out.println("winning position = "+ position);
-				
-				if (position!=100) {
-				position=position-die;
-				
-				
-				}
-				else {
-					System.out.println("winning position = "+ position);
-				}
-					
-				
-			}
+			count ++;	
+			
 			
 			option=(int)Math.floor(Math.random() *10) %3;
 		  
@@ -57,11 +45,18 @@ public class Snancke {
 			break;
 		case ladder:
 			position=position+die;
-			if(position>=100) {
-				System.out.println("winning position =100 ");
-			}
-		
 			System.out.println("player moves ahead = "+position+" die = "+die);
+			
+				if (position>=100) {
+				
+				if (position!=100) {
+				position=position-die;
+				}
+				else {
+					System.out.println("winning position = "+ position);
+					i=1;
+				}
+				}
 			break;
 		case snake:
 			position =position-die;
@@ -78,6 +73,10 @@ public class Snancke {
 		
 	
 			}
+			
+			 
+			
+				System.out.println("dice rolled = " + count+" times");
 		}
 }
 			
