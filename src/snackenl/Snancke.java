@@ -33,7 +33,19 @@ public class Snancke {
 			System.out.println("die is -" +die);
 			
 			if (position>=100) {
+				
 				System.out.println("winning position = "+ position);
+				
+				if (position!=100) {
+				position=position-die;
+				
+				
+				}
+				else {
+					System.out.println("winning position = "+ position);
+				}
+					
+				
 			}
 			
 			option=(int)Math.floor(Math.random() *10) %3;
@@ -45,6 +57,10 @@ public class Snancke {
 			break;
 		case ladder:
 			position=position+die;
+			if(position>=100) {
+				System.out.println("winning position =100 ");
+			}
+		
 			System.out.println("player moves ahead = "+position+" die = "+die);
 			break;
 		case snake:
